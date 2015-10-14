@@ -7,7 +7,7 @@ if (Meteor.isClient) {
   // Session.setDefault('counter', 0);
 
   Template.niuResult.helpers({
-    counter: function () {
+    result: function () {
       return Session.get('niuResult');
     }
   });
