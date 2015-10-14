@@ -1,14 +1,34 @@
 <head>
-  <title>ndemo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  	<title>ndemo</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+	<div class="container">
+		{{> niuSearch}}
+		{{> niuResult}}
+	</div>
 
-  {{> hello}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="niuSearch">
+ 	<form class="niuSearch">
+    	<input type="text" name="query" class="niuSearch-input" placeholder="牛排一下">
+ 	</form>
+</template>
+
+<template name="niuResult">
+	<div class="niuResult">
+		{{#each result}}
+			{{> niuItem}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="niuItem">
+	<div class="niuItem">
+		<div class="niuItem_title">#{{index}}: {{title}}</div>
+		<div class="niuItem_desc">{{desc}}</div>
+	</div>
 </template>
