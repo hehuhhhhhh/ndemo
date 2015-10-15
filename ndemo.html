@@ -1,22 +1,87 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  	<title>牛排 - 帮你更懂世界！</title>
+  	<title>牛排 - 真正了解世界！</title>
 </head>
 
-<body>
-	<div class="logo" >
-	
-		<img src="/niurank_logo.png" width="256" height="256"  />
-		
-	</div>
+<body role="document">
+	<!-- Fixed navbar -->
+    {{> niuNavBar}}
 
-	<div class="container">
+    <p align="center">
+    	<br>
+    	<br>
+		<img src="/niurank_logo.png" width="256" height="256"/>
+	</p>
+
+	<div class="container theme-showcase" role="main">
+		
+<!-- 		<h1 align="center">niuRank</h1>
+		<h2 align="center">Help to explore the WORLD!</h2> -->
 		{{> niuSearch}}
+
+		<p align="center">
+    		<br>
+	    </p>
+		<div class="alert alert-warning" role="alert">
+        	<strong>Warning!</strong> Only Support Searching 高楼，最贵餐厅
+      	</div>
+
+
+		<!-- <h2>
+			<span class="label label-danger">Only Support Searching 高楼，最贵餐厅</span>
+		</h2> -->
+
+		<div class="page-header">
+	        <h2>热门搜索</h2>
+	    </div>
+	    <p>
+	        <button type="button" class="btn btn-lg btn-primary">高楼</button>
+	        <button type="button" class="btn btn-lg btn-success">最贵餐厅</button>
+	        <button type="button" class="btn btn-lg btn-info">最美景点</button>
+
+	    </p>
+
 		{{> niuResult}}
 	</div>
 
+
 </body>
+
+<template name="niuNavBar">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">niuRank</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Setting <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+</template>
 
 <template name="niuSearch">
  	<form class="niuSearch">
@@ -38,3 +103,4 @@
 		<div class="niuItem_desc">{{desc}}</div>
 	</div>
 </template>
+
